@@ -1,9 +1,14 @@
 import streamlit as st
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+apiKey=os.getenv("API_KEY")
 
 # Initialize the GenAI Client
-client = genai.Client(api_key="AIzaSyBfjhXlsMVEZ_sKMjc3teGci3BHRt45Z-M")
+client = genai.Client(api_key=apiKey)
 
 # Streamlit Frontend
 st.title("Persona Chatbot")
